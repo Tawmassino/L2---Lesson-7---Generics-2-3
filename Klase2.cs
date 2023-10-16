@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace L2___Lesson_7___Generics_2
 {
-    internal class Klase2<T>
+    public class Klase2<T>
     {
         //FIELDS
 
@@ -46,7 +46,14 @@ namespace L2___Lesson_7___Generics_2
         //bool - check if element exists
         public bool ElementExists(T userinput)
         {
+            var kazkas = ValidatorClass<T>.CheckIfNotNull(userinput);
+
+            if (kazkas == true) 
+            {
+                
             return MyList.Contains(userinput);
+            }
+            return false;
             //for (int i = 0; i < MyList.Count; i++)
             //{
 
@@ -61,6 +68,7 @@ namespace L2___Lesson_7___Generics_2
         //find one element, otherwise - exception
         public T FindElement(T userinput)
         {
+            //veiktu bet negalima == generic tipu tarpusavy
             //for (int i = 0; i<MyList.Count; i++)
             //{
             //    if (userinput != MyList[i])
@@ -73,6 +81,7 @@ namespace L2___Lesson_7___Generics_2
             //    }
             //}
 
+            //veiktu
             //for (int i = 0; i < MyList.Count; i++)
             //{
             //    if (userinput.Equals(MyList[i]))
